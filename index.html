@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ergonoweb - Accueil</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <meta name="description" content="Ergonoweb - Développement web sur mesure, design UX et optimisation des performances.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-top">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="/assets/media/noir.png" alt="Logo Ergonoweb" class="logo" aria-hidden="true">
+          <span class="brand-name">Ergonoweb</span>
+        </div>
+        <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+        </button>
+        <button class="theme-toggle" aria-pressed="false" aria-label="Basculer thème" title="Basculer thème">
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:none;"><path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+        </button>
+        <nav id="main-navigation" class="main-nav" aria-label="Navigation principale">
+          <a href="/index.html" aria-current="page">Accueil</a>
+          <a href="public/services.html">Services</a>
+          <a href="public/contact.html">Contact</a>
+        </nav>
+        <form id="signup" class="signup-form" novalidate>
+          <input type="text" name="name" id="name" placeholder="Nom" required>
+          <input type="email" name="email" id="email" placeholder="Email" required>
+          <button type="submit" class="btn">S'inscrire</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+      <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Ergonoweb</h1>
+          <p class="lead">Nous concevons et réalisons des expériences web centrées utilisateur — du site vitrine aux applications métiers.</p>
+          <p class="cta-row">
+            <a href="publicservices.html" class="button">
+              <span class="button__icon-wrapper">
+                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+                  <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+                </svg>
+                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+                  <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+                </svg>
+              </span>
+              Découvrir nos services
+            </a>
+          </p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="illustration"><img src="media/illustration.png"  class="illustration-img"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="presentation anim" aria-labelledby="presentation-heading">
+      <div class="container">
+        <div class="presentation-inner">
+          <div class="avatar" aria-hidden="true">
+            <img src="media/avatar.png" alt="Portrait de Louis Mangin" class="avatar-img">
+          </div>
+          <div class="presentation-copy">
+            <h2 id="presentation-heading">Bonjour, je suis Louis Mangin</h2>
+            <p class="lead">Alternant Ingénieur en informatique (CESI). Je conçois des applications web fiables, automatisées et maintenables allant du prototype jusqu'à la mise en production.</p>
+            <ul class="skills-list">
+              <li>Full‑stack: Python, JavaScript (Node/React)</li>
+              <li>Automatisation de tests & CI/CD</li>
+              <li>Optimisation performance & bonnes pratiques</li>
+            </ul>
+            <p class="cta-row">
+              <a class="button" href="contact.html">
+                <span class="button__icon-wrapper">
+                  <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+                  </svg>
+                  <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+                  </svg>
+                </span>
+                Contactez‑moi
+              </a>
+              <a class="button secondary" href="services.html">
+                <span class="button__icon-wrapper">
+                  <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+                  </svg>
+                  <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+                    <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+                  </svg>
+                </span>
+                Mes services
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" aria-labelledby="home-services">
+      <div class="container">
+        <h2 id="home-services" class="section-title">Ce que nous faisons</h2>
+        <p class="lead">Des offres ciblées pour transformer vos idées en produits utilisables et mesurables.</p>
+        <div class="services-grid">
+          <article class="service card anim">
+            <div class="icon" aria-hidden="true">
+              <svg width="36" height="36" aria-hidden="true"><use href="icons.svg#icon-gear"></use></svg>
+            </div>
+            <h3>Solutions sur mesure</h3>
+            <p>Développement d'applications adaptées à vos besoins métier.</p>
+          </article>
+          <article class="service card anim">
+            <div class="icon" aria-hidden="true">
+              <svg width="36" height="36" aria-hidden="true"><use href="icons.svg#icon-palette"></use></svg>
+            </div>
+            <h3>Design & UX</h3>
+            <p>Ateliers, prototypage et tests pour des interfaces plus efficaces.</p>
+          </article>
+          <article class="service card anim">
+            <div class="icon" aria-hidden="true">
+              <svg width="36" height="36" aria-hidden="true"><use href="icons.svg#icon-lightning"></use></svg>
+            </div>
+            <h3>Performance & accessibilité</h3>
+            <p>Optimisations mesurables (vitesse, SEO, accessibilité).</p>
+          </article>
+        </div>
+        <p class="cta-row">
+          <a href="public/services.html" class="button secondary">
+            <span class="button__icon-wrapper">
+              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+              </svg>
+              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+              </svg>
+            </span>
+            Voir tous les services
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="more anim">
+      <div class="container">
+        <h2 class="section-title">Approche</h2>
+        <p>Nous privilégions une démarche itérative : recherche, prototype, test et montée en charge.</p>
+        <p>
+          <a class="button" href="public/contact.html">
+            <span class="button__icon-wrapper">
+              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+              </svg>
+              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+              </svg>
+            </span>
+            Discutons de votre projet
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="contact-sm">
+        <p>© <span id="year"></span> Ergonoweb — Tous droits réservés.</p>
+        <p class="small">12 rue Exemple, Paris • <a href="mailto:contact@ergonoweb.com">contact@ergonoweb.com</a></p>
+      </div>
+      <div class="social">
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>

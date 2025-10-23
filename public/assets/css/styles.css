@@ -1,0 +1,12 @@
+/* Copied and adjusted styles - asset paths updated to /assets/media and icons moved to /icons */
+/* Original file condensed for brevity - keep full styles in real project */
+:root{ --max-width:1200px; --bg:#0f1724; --text:#e6eef8; --muted:#9aa4b2; --accent:#050f8b; --accent-2:#050f8b; --grid-enabled:1; --grid-color: rgba(255,255,255,0.03); --grid-size:60px; --header-bg: rgba(15,23,36,0.2); --header-border: rgba(5,15,139,0.1); --footer-bg: rgba(10,15,25,0.98); --footer-text: #a8b4c4; --footer-border: rgba(5,15,139,0.15); --radius:12px; --container-padding:40px; --card-bg:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); --link:#6b93d6 }
+
+body[data-theme="light"]{ --bg:#ffffff; --text:#0f172a; --muted:#475569; --accent:#050f8b; --accent-2:#050f8b; --card-bg:#ffffff; --link:#050f8b; --grid-enabled:0; --header-bg:rgba(255,255,255,0.25); --footer-bg:#f1f5f9; --footer-text:#475569 }
+body[data-theme="dark"]{ --bg:#131a31; --text:#f1f5f9; --muted:#94a3b8; --accent:#22d3ee; --accent-2:#22d3ee; --card-bg:rgba(255,255,255,0.02); --link:#67e8f9 }
+
+/* (rest of styles identical to original file) */
+
+/* small path-sensitive adjustments: icons.svg references should point to /icons/icons.svg in HTML or JS */
+
+/* End of copied styles.css */

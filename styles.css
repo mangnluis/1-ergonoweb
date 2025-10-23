@@ -1,0 +1,458 @@
+:root{
+  --max-width:1200px;
+  --bg:#0f1724; /* dark tech background */
+  --text:#e6eef8;
+  --muted:#9aa4b2;
+  --accent:#050f8b; /* bleu foncé */
+  --accent-2:#050f8b; /* bleu foncé harmonisé */
+  /* subtle grid overlay tokens (toggle with --grid-enabled) */
+  --grid-enabled: 1;
+  --grid-color: rgba(255,255,255,0.03);
+  --grid-size: 60px;
+  /* Header tokens */
+  --header-bg: rgba(15,23,36,0.2);
+  --header-border: rgba(5,15,139,0.1);
+  /* Footer tokens (will be overridden per-theme) */
+  --footer-bg: rgba(10,15,25,0.98);
+  --footer-text: #a8b4c4;
+  --footer-border: rgba(5,15,139,0.15);
+  --footer-link: var(--link);
+  --radius:12px;
+  --container-padding:40px;
+  --desktop-break:1200px;
+  --card-bg:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  --glass: rgba(255,255,255,0.03);
+  --link:#6b93d6; /* bleu moyen pour lisibilité */
+}
+
+/* Theme overrides */
+body[data-theme="light"]{
+  /* restore a clean white background and disable grid overlay for light theme */
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #050f8b; /* bleu foncé harmonisé */
+  --accent-2: #050f8b; /* bleu foncé harmonisé */
+  --card-bg: #ffffff;
+  --link: #050f8b;
+  --grid-enabled: 0;
+  --grid-color: rgba(0,0,0,0.02);
+  /* Header light */
+  --header-bg: rgba(255,255,255,0.25);
+  --header-border: rgba(5,15,139,0.15);
+  /* Footer light */
+  --footer-bg: #f1f5f9;
+  --footer-text: #475569;
+  --footer-border: rgba(5,15,139,0.2);
+  --footer-link: #050f8b;
+  .section-title{font-size:30px;margin:0 0 18px;font-weight:700;color:#050f8b}
+
+}
+body[data-theme="dark"]{
+  --bg: #131a31;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #22d3ee; /* cyan néon */
+  --accent-2: #22d3ee; /* cyan néon harmonisé */
+  --card-bg: rgba(255,255,255,0.02);
+  --link: #67e8f9;
+  --grid-color: rgba(255,255,255,0.06);
+  /* Header dark */
+  --header-bg: rgba(10,14,26,0.95);
+  --header-border: rgba(34,211,238,0.12);
+  /* Footer dark */
+  --footer-bg: rgba(6,9,15,0.98);
+  --footer-text: #94a3b8;
+  --footer-border: rgba(34,211,238,0.15);
+  --footer-link: #67e8f9;
+  .section-title{font-size:30px;margin:0 0 18px;font-weight:700;color:#67e8f9}
+  
+}
+
+/* Theme transition tokens */
+:root{ --t-fast: 160ms; --t-medium: 260ms }
+@media (prefers-reduced-motion: no-preference){
+  html,body, .site-header, .site-footer, .card{ transition: background-color var(--t-medium) ease, color var(--t-fast) ease, border-color var(--t-fast) ease, box-shadow var(--t-medium) ease }
+}
+/* Simple reset */
+*{box-sizing:border-box}
+.html,body{height:100%;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--text);-webkit-font-smoothing:antialiased}
+/* Base background + optional grid overlay */
+/* apply base background on body so body-scoped theme vars take effect */
+body{background-color:var(--bg)}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--container-padding);}
+
+.site-header{position:sticky;top:0;z-index:100;background:var(--header-bg);border-bottom:1px solid var(--header-border);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.3s ease,box-shadow 0.3s ease}
+.site-header.scrolled{box-shadow:0 8px 30px rgba(0,0,0,0.15)}
+.header-top{padding:16px 0}
+.header-inner{display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{
+  height:44px;           /* keep header row compact */
+  width:auto;            /* preserve original aspect ratio */
+  max-width:160px;       /* avoid overly large logos */
+  background:transparent;/* keep logo unboxed */
+  border-radius:6px;     /* slight rounding */
+  display:inline-block;
+  object-fit:contain;    /* keep image readable if constrained */
+  vertical-align:middle; /* align nicely with text */
+}
+.brand-name{font-weight:600;font-size:18px;color:var(--text)}
+.main-nav{margin-left:24px;display:flex;gap:20px}
+.main-nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:color 0.2s ease,background 0.2s ease}
+.main-nav a:hover{color:var(--text);background:linear-gradient(90deg, rgba(31,182,255,0.12), rgba(124,92,255,0.08))}
+
+/* Hamburger toggle - hidden on desktop */
+.menu-toggle{display:none;background:transparent;border:0;padding:8px;border-radius:8px;cursor:pointer;color:var(--muted)}
+.menu-toggle svg{display:block}
+
+.theme-toggle{display:inline-flex;background:transparent;border:0;padding:8px;border-radius:8px;cursor:pointer;color:var(--muted);margin-left:8px}
+.theme-toggle svg{display:block}
+
+.theme-toggle:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+
+/* Mobile behavior: hide desktop nav, show toggle */
+@media (max-width:640px){
+  .menu-toggle{display:inline-flex;margin-left:12px}
+  /* make the nav an overlay panel that animates open/close */
+  .main-nav{position:fixed;top:64px;right:16px;left:16px;background:var(--card-bg);flex-direction:column;padding:18px;border-radius:12px;box-shadow:0 20px 60px rgba(16,24,32,0.12);display:flex;opacity:0;transform:translateY(-6px) scale(0.99);pointer-events:none;z-index:60;transition:opacity .26s ease,transform .26s cubic-bezier(.2,.9,.3,1)}
+  .main-nav a{padding:12px 10px;border-radius:8px}
+  body.menu-open .main-nav{opacity:1;transform:none;pointer-events:auto}
+  /* push signup form under header in mobile while menu is open */
+  .signup-form{display:none}
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .main-nav{transition:none}
+  }
+}
+
+/* Header link animation: sliding underline */
+.main-nav a{position:relative;overflow:visible}
+.main-nav a::after{content:'';position:absolute;left:8px;right:8px;bottom:4px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left center;transition:transform .32s cubic-bezier(.2,.9,.3,1);border-radius:2px;opacity:0.95}
+.main-nav a:hover::after{transform:scaleX(1);opacity:1}
+.main-nav a:active{transform:translateY(1px)}
+
+.signup-form{margin-left:auto;display:flex;align-items:center;gap:10px}
+.signup-form input{padding:9px 14px;border:1px solid var(--muted);border-radius:8px;background:var(--card-bg);color:var(--text);font-size:14px;transition:all 0.3s ease}
+.signup-form input::placeholder{color:var(--muted);opacity:0.7}
+.signup-form input:focus{outline:none;border-color:var(--accent);background:var(--bg)}
+.signup-form .btn{
+  padding:9px 20px;
+  border-radius:8px;
+  border:2px solid var(--accent);
+  background:var(--accent);
+  color:var(--bg);
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  transition:all 0.3s ease;
+}
+.signup-form .btn:hover{
+  background:transparent;
+  color:var(--accent);
+  transform:translateY(-2px);
+}
+.signup-form .btn:active{
+  transform:translateY(0);
+}
+
+.hero{padding:56px 0 20px 0;background:transparent}
+.hero-inner{display:flex;align-items:center;gap:56px}
+.hero-copy{flex:1}
+.hero-copy h1{font-size:56px;font-weight:700;margin:0 0 12px;letter-spacing:-0.02em;color:var(--text);background:none}
+.lead{color:var(--muted);font-size:18px;margin:0 0 22px;max-width:68ch}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap}
+.cta-row .btn{display:inline-block;padding:12px 22px;border-radius:12px;text-decoration:none;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#ffffff;transition:transform .22s ease}
+.cta-row .btn:hover{transform:translateY(-6px) scale(1.02)}
+.hero-visual{width:600px;display:flex;justify-content:center;align-items:center}
+.illustration{width:550px;height:400px;background:transparent;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.illustration-img{width:100%;height:100%;object-fit:contain;display:block}
+.hero .illustration{animation:float 6s ease-in-out infinite}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+/* Remove bright overlay that broke contrast; keep a consistent dark-blue background */
+/* body::before renders the optional grid overlay and stays behind content; controlled by body vars */
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:transparent}
+/* if grid is enabled, paint the overlay using the grid vars (opacity controlled by --grid-enabled) */
+body::before{background-image: var(--grid-overlay); background-repeat: repeat; background-attachment: fixed; opacity: calc(var(--grid-enabled)); mix-blend-mode: overlay}
+
+/* Headings - stronger with occasional highlight */
+h1,h2,h3{font-weight:700;color:var(--text)}
+h2{position:relative}
+/* highlight underline bar for some headings */
+.section-title::after{content:'';display:block;width:56px;height:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:4px;margin-top:12px;opacity:0.12}
+.card h2{font-weight:700}
+
+/* subtle hover lift for cards */
+.card{transition:transform .22s cubic-bezier(.2,.9,.3,1)}
+.card:hover{transform:translateY(-8px)}
+
+.services{padding:16px 0 40px 0} /* smaller top padding so services sit closer to the intro title */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px} /* larger gap between blocks */
+.card{padding:18px;border-radius:12px;background:var(--card-bg);border:1px solid rgba(16,24,32,0.04);box-shadow:0 8px 30px rgba(16,24,32,0.04)}
+.service .icon{font-size:28px;margin-bottom:12px}
+.icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px}
+.icon svg{width:44px;height:44px;color:var(--accent);transition:transform .18s ease,color .18s ease;display:inline-block}
+.icon svg path{fill:currentColor}
+.icon svg use{fill:currentColor}
+.service:hover .icon svg{color:var(--accent-2);transform:scale(1.18) rotate(-6deg)}
+
+/* Contact page layout */
+.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}
+.form-row{display:flex;gap:12px}
+.form-field{display:flex;flex-direction:column}
+.form-field span{font-size:14px;margin-bottom:8px;color:var(--muted)}
+address{font-style:normal}
+
+@media (max-width:1000px){
+  .contact-grid{grid-template-columns:1fr}
+}
+
+.more,.contact{padding:48px 0}
+
+.site-footer{background:var(--footer-bg);color:var(--footer-text);border-top:1px solid var(--footer-border);padding:28px 0;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 -4px 20px rgba(0,0,0,0.08)}
+.site-footer::before{content:'';display:block;height:2px;width:100%;background:linear-gradient(90deg,var(--accent),transparent);margin-bottom:12px;opacity:0.3}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-inner .social a{margin-left:12px;text-decoration:none;color:var(--footer-text);transition:color 0.2s ease}
+.footer-inner .social a:hover{color:var(--accent)}
+.footer-inner a{color:var(--footer-link);transition:color 0.2s ease}
+.footer-inner a:hover{color:var(--accent)}
+
+.small{font-size:13px;color:var(--muted)}
+
+p{color:var(--muted)}
+
+/* Animations */
+.anim{opacity:0;transform:translateY(12px) scale(.995);transition:opacity .5s cubic-bezier(.2,.9,.3,1),transform .5s cubic-bezier(.2,.9,.3,1)}
+.anim.in-view{opacity:1;transform:none}
+
+/* Form controls - theme-aware look */
+input[type="text"],input[type="email"],textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid rgba(16,24,32,0.06);
+  border-radius:8px;
+  background:var(--card-bg);
+  font-size:15px;
+  color:var(--text);
+}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 6px 20px rgba(31,182,255,0.06)}
+textarea{resize:vertical}
+
+.field-error{color:#e55353;font-size:13px;margin-top:6px}
+
+/* Global link color rules to avoid neon/electric blues */
+a{color:var(--link);text-decoration:underline}
+a:hover{color:var(--accent);text-decoration:none}
+
+/* Mail and phone links should match --link and remain readable */
+a[href^="tel:"], a[href^="mailto:"]{color:var(--link);font-weight:600}
+a[href^="tel:"]:hover, a[href^="mailto:"]:hover{color:var(--accent)}
+
+/* Modern animated buttons for redirections */
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--accent);
+  color: var(--bg);
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.button.secondary {
+  background-color: var(--accent-2);
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--accent);
+  background-color: var(--bg);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button.secondary .button__icon-wrapper {
+  color: var(--accent-2);
+}
+
+.button:hover {
+  background-color: var(--text);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+.button:hover .button__icon-wrapper {
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+/* Old button styles kept for form buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);cursor:pointer;text-decoration:none}
+.btn:disabled{opacity:.7;cursor:not-allowed}
+
+/* Animated button for contact form */
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid transparent;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: inherit;
+  border-radius: 100px;
+  color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: var(--accent);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: var(--text);
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: var(--text);
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px var(--accent);
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+.animated-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Contact form specific layout tweaks */
+.contact .card{padding:20px}
+
+/* Presentation section (homepage) */
+.presentation{padding:36px 0 28px;background:transparent}
+.presentation-inner{display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:center}
+.avatar{width:160px;height:160px;border-radius:12px;overflow:hidden;flex:0 0 160px;background:var(--card-bg);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(16,24,32,0.06)}
+.avatar-img{width:100%;height:100%;object-fit:cover;display:block}
+.presentation-copy h2{margin:0 0 8px}
+.skills-list{margin:12px 0 18px;padding-left:18px}
+.skills-list li{margin-bottom:6px;color:var(--muted)}
+
+@media (max-width:1000px){
+  .presentation-inner{grid-template-columns:120px 1fr}
+  .avatar{width:120px;height:120px}
+}
+@media (max-width:640px){
+  .presentation-inner{grid-template-columns:1fr;gap:16px;text-align:center}
+  .avatar{margin:0 auto}
+}
+
+
+/* Responsive tweaks (desktop-first but adapt downwards) */
+@media (max-width: 1000px){
+  .hero-inner{flex-direction:column;text-align:center;padding-bottom:12px}
+  .hero-visual{width:100%}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-copy h1{font-size:40px}
+}
+@media (max-width:640px){
+  /* main-nav display handled in the other mobile block (animated overlay) */
+  .signup-form{display:flex;gap:6px}
+  .services-grid{grid-template-columns:1fr}
+  .hero-copy h1{font-size:28px}
+  .container{padding:0 20px}
+  /* Make contact form stack on small screens */
+  .contact .container > div{flex-direction:column}
+  .contact aside{width:100%}
+}
