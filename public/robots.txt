@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+# Sitemap location (will be updated with actual URL)
+Sitemap: https://www.ergonoweb.com/sitemap.xml
+

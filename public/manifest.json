@@ -1,0 +1,27 @@
+{
+  "name": "Ergonoweb - Développement web sur mesure",
+  "short_name": "Ergonoweb",
+  "description": "Développement web sur mesure, design UX et optimisation des performances",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1724",
+  "theme_color": "#050f8b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/media/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/media/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "technology"],
+  "lang": "fr"
+}
+

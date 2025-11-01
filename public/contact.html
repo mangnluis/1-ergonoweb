@@ -3,16 +3,63 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ergonoweb - Contact</title>
+  <title>Contact - Ergonoweb</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Contact - Ergonoweb">
+  <meta name="description" content="Contactez Ergonoweb pour un devis ou une discussion autour de votre projet web. Réponse sous 24h.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ergonoweb.com/contact.html">
+  <meta property="og:title" content="Contact - Ergonoweb">
+  <meta property="og:description" content="Contactez Ergonoweb pour un devis ou une discussion autour de votre projet web">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact - Ergonoweb">
+  <meta name="twitter:description" content="Contactez-nous pour discuter de votre projet web">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.ergonoweb.com/contact.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/media/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/media/apple-touch-icon.png">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css">
-  <meta name="description" content="Contactez Ergonoweb pour un devis ou une discussion autour de votre projet web.">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Ergonoweb",
+    "description": "Page de contact pour discuter de projets web",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Ergonoweb",
+      "email": "contact@ergonoweb.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 rue Exemple",
+        "addressLocality": "Paris",
+        "postalCode": "75000",
+        "addressCountry": "FR"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
-  <header class="site-header">
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+  <header class="site-header" role="banner">
     <div class="header-top">
       <div class="container header-inner">
         <div class="brand">
-          <img src="assets/media/noir.png" alt="Logo Ergonoweb" class="logo" aria-hidden="true">
+          <img src="assets/media/noir.png" alt="Logo Ergonoweb" class="logo">
           <span class="brand-name">Ergonoweb</span>
         </div>
         <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
@@ -26,8 +73,8 @@
           <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
           <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:none;"><path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
         </button>
-        <nav id="main-navigation" class="main-nav" aria-label="Navigation principale">
-          <a href="../index.html">Accueil</a>
+        <nav id="main-navigation" class="main-nav" aria-label="Navigation principale" role="navigation">
+          <a href="index.html">Accueil</a>
           <a href="services.html">Services</a>
           <a href="contact.html" aria-current="page">Contact</a>
         </nav>
@@ -35,7 +82,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content" role="main">
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -51,21 +98,28 @@
           <div class="card">
             <h2 class="section-title">Envoyez-nous un message</h2>
             <form id="contact-form" novalidate>
+              <!-- Honeypot field for spam protection -->
+              <input type="text" name="website" style="position:absolute;left:-9999px;" tabindex="-1" autocomplete="off">
+              
               <div class="form-field">
+                <label for="cname" style="display:none;">Nom</label>
                 <span>Nom *</span>
-                <input type="text" name="name" id="cname" required>
+                <input type="text" name="name" id="cname" required aria-required="true" aria-label="Votre nom">
               </div>
               <div class="form-field">
+                <label for="cemail" style="display:none;">Email</label>
                 <span>Email *</span>
-                <input type="email" name="email" id="cemail" required>
+                <input type="email" name="email" id="cemail" required aria-required="true" aria-label="Votre adresse email">
               </div>
               <div class="form-field">
+                <label for="subject" style="display:none;">Sujet</label>
                 <span>Sujet</span>
-                <input type="text" name="subject" id="subject" placeholder="Objet de votre message">
+                <input type="text" name="subject" id="subject" placeholder="Objet de votre message" aria-label="Sujet du message">
               </div>
               <div class="form-field">
+                <label for="message" style="display:none;">Message</label>
                 <span>Message *</span>
-                <textarea name="message" id="message" rows="8" required></textarea>
+                <textarea name="message" id="message" rows="8" required aria-required="true" aria-label="Votre message"></textarea>
               </div>
               <button type="submit" class="animated-button">
                 <span class="text">Envoyer</span>
@@ -104,18 +158,21 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <div class="contact-sm">
         <p>© <span id="year"></span> Ergonoweb — Tous droits réservés.</p>
         <p class="small">12 rue Exemple, Paris • <a href="mailto:contact@ergonoweb.com">contact@ergonoweb.com</a></p>
       </div>
       <div class="social">
-        <a href="#" aria-label="Twitter">Twitter</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <!-- Social links will be added when URLs are provided -->
       </div>
     </div>
   </footer>
+  
+  <!-- EmailJS SDK (uncomment and add your Public Key) -->
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
+  <!-- <script type="text/javascript">emailjs.init('YOUR_PUBLIC_KEY');</script> -->
 
   <script src="assets/js/script.js"></script>
 </body>
