@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+    <path d="M12,19 L10,22 L7,21 L6.5,17.5 L3,17 L2,14 L5,12 L2,10 L3,7 L6.5,6.5 L7,3 L10,2 L12,5 L14,2 L17,3 L17.5,6.5 L21,7 L22,10 L19,12 L22,14 L21,17 L17.5,17.5 L17,21 L14,22 L12,19 Z M12,16 C14.209139,16 16,14.209139 16,12 C16,9.790861 14.209139,8 12,8 C9.790861,8 8,9.790861 8,12 C8,14.209139 9.790861,16 12,16 Z"/>
   </symbol>
   
-  <symbol id="icon-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M9 11l-4.77 4.77c-1.14 1.14-1.14 3 0 4.14l1.92 1.92c1.14 1.14 3 1.14 4.14 0L14 15"/>
-    <path d="M20.42 6.58c.78.78.78 2.05 0 2.83L15 15l-3-3 5.42-5.42c.78-.78 2.05-.78 2.83 0z"/>
-    <path d="M6 18h1"/>
+  <symbol id="icon-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 16C10 14.34 10 13 13 13H17C20 13 20 12 20 10V8C20 6 20 5 17 5H16"/>
+    <path d="M12 2H8C7.35 3.95 7.35 6.05 8 8H12C12.65 6.05 12.65 3.95 12 2Z"/>
+    <path d="M8 2H7C5 2 4 3 4 5C4 7 5 8 7 8H8C7 6 7 4 8 2Z"/>
+    <path d="M13 2H12C13 4 13 6 12 8H13C15 8 16 7 16 5C16 3 15 2 13 2Z"/>
+    <path d="M9.5 22H10.5C12 22 12 21 12 20.5V17.5C12 17 12 16 10.5 16H9.5C8 16 8 17 8 17.5V20.5C8 21 8 22 9.5 22Z"/>
   </symbol>
   
-  <symbol id="icon-lightning" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+  <symbol id="icon-lightning" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="9.25 1.75,2.75 9.25,7.25 9.75,6.75 14.25,13.25 6.75,8.75 6.25"/>
   </symbol>
 </svg>
-
