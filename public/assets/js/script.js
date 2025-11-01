@@ -159,6 +159,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
     toggle.addEventListener('click', function(){ if(document.body.classList.contains('menu-open')) close(); else open(); });
 
+    // close when clicking outside the menu (on the overlay)
+    document.addEventListener('click', function(e){ if(document.body.classList.contains('menu-open') && !nav.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)){ close(); } });
+
     // close when clicking a nav link (always close on click, hamburger is always active)
     nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ close(); }));
 
