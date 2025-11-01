@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+  </symbol>
+  
+  <symbol id="icon-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 11l-4.77 4.77c-1.14 1.14-1.14 3 0 4.14l1.92 1.92c1.14 1.14 3 1.14 4.14 0L14 15"/>
+    <path d="M20.42 6.58c.78.78.78 2.05 0 2.83L15 15l-3-3 5.42-5.42c.78-.78 2.05-.78 2.83 0z"/>
+    <path d="M6 18h1"/>
+  </symbol>
+  
+  <symbol id="icon-lightning" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+  </symbol>
+</svg>
+

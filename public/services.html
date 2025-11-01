@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ergonoweb - Services</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <meta name="description" content="Services de développement web, design UX et optimisation par Ergonoweb">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div class="header-top">
       <div class="container header-inner">
         <div class="brand">
-          <img src="/assets/media/noir.png" alt="Logo Ergonoweb" class="logo" aria-hidden="true">
+          <img src="assets/media/noir.png" alt="Logo Ergonoweb" class="logo" aria-hidden="true">
           <span class="brand-name">Ergonoweb</span>
         </div>
         <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
@@ -24,8 +24,8 @@
         </button>
         <nav id="main-navigation" class="main-nav" aria-label="Navigation principale">
           <a href="../index.html">Accueil</a>
-          <a href="/services.html" aria-current="page">Services</a>
-          <a href="/contact.html">Contact</a>
+          <a href="services.html" aria-current="page">Services</a>
+          <a href="contact.html">Contact</a>
         </nav>
         <form id="signup" class="signup-form" novalidate>
           <input type="text" name="name" id="name" placeholder="Nom" required>
@@ -37,7 +37,80 @@
   </header>
 
   <main>
-    <!-- content omitted for brevity, identical structure to original pages -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Nos services</h1>
+          <p class="lead">Nous proposons une gamme complète de services pour transformer vos idées en expériences web performantes et centrées utilisateur.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" aria-labelledby="services-heading">
+      <div class="container">
+        <h2 id="services-heading" class="section-title">Ce que nous proposons</h2>
+        <p class="lead">Des solutions adaptées à vos besoins, de la conception à la mise en production.</p>
+        <div class="services-grid">
+          <article class="service card anim">
+            <div class="icon" aria-hidden="true">
+              <svg width="36" height="36" aria-hidden="true"><use href="assets/icons.svg#icon-gear"></use></svg>
+            </div>
+            <h3>Solutions sur mesure</h3>
+            <p>Développement d'applications web adaptées à vos besoins métier spécifiques.</p>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--muted);">
+              <li>Architecture sur mesure</li>
+              <li>Intégration API et services tiers</li>
+              <li>Automatisation et workflows</li>
+              <li>Maintenance et évolutivité</li>
+            </ul>
+          </article>
+
+          <article class="service card anim">
+            <div class="icon" aria-hidden="true">
+              <svg width="36" height="36" aria-hidden="true"><use href="assets/icons.svg#icon-palette"></use></svg>
+            </div>
+            <h3>Design & UX</h3>
+            <p>Ateliers, prototypage et tests pour des interfaces utilisateur efficaces et agréables.</p>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--muted);">
+              <li>Recherche utilisateur et personas</li>
+              <li>Prototypage et wireframes</li>
+              <li>Design system et composants</li>
+              <li>Tests d'utilisabilité</li>
+            </ul>
+          </article>
+
+          <article class="service card anim">
+            <div class="icon" aria-hidden="true">
+              <svg width="36" height="36" aria-hidden="true"><use href="assets/icons.svg#icon-lightning"></use></svg>
+            </div>
+            <h3>Performance & accessibilité</h3>
+            <p>Optimisations mesurables pour améliorer la vitesse, le SEO et l'accessibilité de vos applications.</p>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--muted);">
+              <li>Audit de performance</li>
+              <li>Optimisation SEO technique</li>
+              <li>Conformité RGAA/WCAG</li>
+              <li>Monitoring et analytics</li>
+            </ul>
+          </article>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--card-bg); border-radius: 12px; text-align: center;">
+          <h2 class="section-title">Prêt à démarrer votre projet ?</h2>
+          <p class="lead" style="margin-bottom: 1.5rem;">Discutons de vos besoins et trouvons ensemble la solution adaptée.</p>
+          <a href="contact.html" class="button">
+            <span class="button__icon-wrapper">
+              <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+              </svg>
+              <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg button__icon-svg--copy">
+                <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+              </svg>
+            </span>
+            Contactez-nous
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -53,6 +126,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
