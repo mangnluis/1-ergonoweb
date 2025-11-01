@@ -81,37 +81,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   })();
 
-  // Signup form handling (client-side only)
-  const form = document.getElementById('signup');
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const name = form.querySelector('#name');
-      const email = form.querySelector('#email');
-      let valid = true;
-      [name,email].forEach(f=>{
-        if(!f.value.trim()){
-          f.style.borderColor = '#e55353';
-          valid = false;
-        } else {
-          f.style.borderColor = '';
-        }
-      });
-      if(!valid){
-        // simple feedback
-        const btn = form.querySelector('.btn');
-        btn.textContent = 'Complétez le formulaire';
-        setTimeout(()=>btn.textContent = "S'inscrire",2300);
-        return;
-      }
-
-      // Simulate a successful submission
-      const btn = form.querySelector('.btn');
-      btn.disabled = true; btn.textContent = 'Merci !';
-      setTimeout(()=>{btn.disabled=false;btn.textContent = "S'inscrire"; form.reset()},1500);
-    });
-  }
-
   // Full contact form handling (contact.html)
   const contactForm = document.getElementById('contact-form');
   if(contactForm){
@@ -181,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.getElementById('main-navigation');
     if(!toggle || !nav) return;
-    const BREAK = 640;
+    const BREAK = 1000;
     let previousFocus = null;
 
     function setAria(open){ toggle.setAttribute('aria-expanded', open ? 'true' : 'false'); toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu'); }
@@ -190,13 +159,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
     toggle.addEventListener('click', function(){ if(document.body.classList.contains('menu-open')) close(); else open(); });
 
-    // close when clicking a nav link
-    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ if(window.innerWidth<=BREAK) close(); }));
+    // close when clicking a nav link (always close on click, hamburger is always active)
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ close(); }));
 
     // close on Escape
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && document.body.classList.contains('menu-open')) { e.preventDefault(); close(); } });
 
-    // close if resizing wider than breakpoint
+    // close if resizing wider than breakpoint (only for very large screens)
     let lastWidth = window.innerWidth;
     window.addEventListener('resize', function(){ if(lastWidth<=BREAK && window.innerWidth>BREAK){ close(); } lastWidth = window.innerWidth; });
 
